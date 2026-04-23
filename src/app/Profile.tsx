@@ -2,8 +2,12 @@ import { View, Image } from "react-native";
 import { User } from "@/components/User";
 import { Skills } from "@/components/Skills";
 import { Preferences } from "@/components/Preferences";
+import { Input } from "@/components/Input";
+import { Button } from "@/components/Button";
+import { useToast } from "@/components/Toast";
 
 export function Profile(){
+    const { toast } = useToast();
     return(
         <View className="flex-1 bg-gray-700">
             <Image 
@@ -13,6 +17,10 @@ export function Profile(){
                     <User />
                     <Skills />
                     <Preferences />
+                    <View>
+                        <Input placeholder="Company" label="Company" inputClasses="mb-6"/>
+                        <Button label="Save" onPress={() => toast("Saved!", 'success', 1000, 'top')}/>
+                    </View>
                 </View>
         </View>
     )

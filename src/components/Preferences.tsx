@@ -3,6 +3,7 @@ import { View, Text, Image } from "react-native";
 import { Title } from "./Title";
 import { Option } from "@/components/Option";
 import { Switch } from "@/components/Switch";
+import { Checkbox } from "@/components/Checkbox";
 
 export function Preferences(){
     const [isEnabled, setIsEnabled] = useState(false);
@@ -17,6 +18,7 @@ export function Preferences(){
             <Option>
                 <Option.Icon icon="email" />
                 <Option.Title>Public email</Option.Title>
+                <Checkbox />
             </Option>
         </View>
     )
